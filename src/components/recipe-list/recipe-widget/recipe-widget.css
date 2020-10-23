@@ -1,0 +1,15 @@
+.recipe-picture {
+  width: 300px;
+  max-height: 350px;
+}
+
+.recipe-wrapper {
+  border: solid 2px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.image-wrapper {
+  height: 350px;
+  width: 300px;
+}
