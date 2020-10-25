@@ -3,7 +3,10 @@ const config = require('./config');
 const restify = require('restify');
 const restifyPlugins = require('restify-plugins');
 const mongoose = require('mongoose'),
-    recipe = require('./api/models/recipeModel'); //created model loading here
+    recipe = require('./api/models/recipeModel'),
+    user = require('./api/models/userModel'),
+    userFavoriteRecipe = require('./api/models/userFavoriteRecipeModel'),
+    userRecipeTag = require('./api/models/userRecipeTagModel');
 
 const server = restify.createServer({
     name: config.name,
@@ -24,6 +27,9 @@ server.listen(config.port, () => {
     });
     db.once('open', () => {
         require('./api/routes/recipeRoutes')(server);
+        require('./api/routes/userRoutes')(server);
+        require('./api/routes/userFavoriteRecipeRoutes')(server);
+        require('./api/routes/userRecipeTagRoutes')(server);
         console.log(`API server is listening on port ${config.port}`);
     });
 });

@@ -1,7 +1,4 @@
 'use strict';
-var mongoose = require('mongoose'),
-    Recipe = mongoose.model('Recipe');
-const errors = require('restify-errors');
 
 module.exports = function(server) {
     var recipes = require('../controllers/recipeController');

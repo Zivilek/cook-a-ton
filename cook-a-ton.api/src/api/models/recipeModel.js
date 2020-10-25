@@ -1,16 +1,13 @@
 'use strict';
-const { ObjectId } = require('mongodb');
 const mongoose = require('mongoose');
 const mongooseStringQuery = require('mongoose-string-query');
 const timestamps = require('mongoose-timestamp');
 const Schema = mongoose.Schema;
 
 const RecipeSchema = new Schema({
-    _id: {
-        type: ObjectId,
-    },
     name: {
         type: String,
+        required: true
     },
     created_date: {
         type: Date,
