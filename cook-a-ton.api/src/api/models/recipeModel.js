@@ -1,9 +1,11 @@
 'use strict';
 const { ObjectId } = require('mongodb');
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const mongooseStringQuery = require('mongoose-string-query');
+const timestamps = require('mongoose-timestamp');
+const Schema = mongoose.Schema;
 
-var RecipeSchema = new Schema({
+const RecipeSchema = new Schema({
     _id: {
         type: ObjectId,
     },
@@ -26,4 +28,7 @@ var RecipeSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Recipe', RecipeSchema, 'recipe');
+RecipeSchema.plugin(timestamps);
+RecipeSchema.plugin(mongooseStringQuery);
+
+module.exports = mongoose.model('Recipe', RecipeSchema, 'Recipe');
