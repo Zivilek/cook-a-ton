@@ -20,12 +20,17 @@ const RecipeList = () => {
       <RecipeWidget
         picture={recipe.image}
         title={recipe.title}
+        source={recipe.source}
         key={recipe.id}
       />
     );
   });
 
-  return <div className="recipes-container">{renderedRecipeWidgets}</div>;
+  return (
+    <div className="recipe-list">
+      <div className="recipes-container">{renderedRecipeWidgets}</div>
+    </div>
+  );
 };
 
 export default RecipeList;

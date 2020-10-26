@@ -1,15 +1,17 @@
 .recipe-picture {
-  width: 230px;
-  max-height: 350px;
+  max-width: 230px;
+  max-height: 200px;
 }
 
 .recipe-wrapper {
-  border: solid 1px;
   padding: 10px;
   margin: 10px;
+
+  border: solid 1px #80808085;
+  border-radius: 4px;
 }
 
 .image-wrapper {
-  height: 300px;
+  height: 200px;
   width: 250px;
 }

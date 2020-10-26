@@ -1,0 +1,16 @@
+.side-bar {
+  min-width: 240px;
+  width: 300px;
+  /* border-right: 1px solid gray; */
+  background-color: #0000000a;
+  padding-top: 15px;
+}
+
+.filter-section {
+  width: 200px;
+}
+
+.filter-section > * {
+  width: 200px !important;
+  margin: 5px 20px !important;
+}
