@@ -2,23 +2,25 @@
     "name": "cook-a-ton.api",
     "version": "1.0.0",
     "description": "",
-    "main": "server.js",
+    "main": "src/index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon server.js"
+        "start": "babel-node src/index.js",
+        "dev:start": "nodemon --exec babel-node src/index.js"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "@babel/core": "^7.12.3",
+        "@babel/node": "^7.12.1",
+        "@babel/preset-env": "^7.12.1",
+        "babel-loader": "^8.1.0",
         "nodemon": "^2.0.6"
     },
     "dependencies": {
         "dotenv": "^8.2.0",
+        "express": "^4.17.1",
         "mongoose": "^5.10.10",
         "mongoose-string-query": "^0.2.7",
-        "mongoose-timestamp": "^0.6.0",
-        "restify": "^8.5.1",
-        "restify-errors": "^8.0.2",
-        "restify-plugins": "^1.6.0"
+        "mongoose-timestamp": "^0.6.0"
     }
 }
