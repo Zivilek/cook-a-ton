@@ -1,8 +1,8 @@
-import Controller from './Controller';
-import RecipeRepository from "./../repositories/recipeRepository";
 import Recipe from "../models/recipe";
+import RecipeRepository from "./../repositories/recipeRepository";
+import Controller from './Controller';
 const recipeRepository = new RecipeRepository(
-    new Recipe().getInstance()
+    new Recipe()
 );
 
 class RecipeController extends Controller {

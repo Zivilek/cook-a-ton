@@ -1,27 +1,20 @@
 import { Schema } from "mongoose";
 import BaseModel from "./baseModel";
 
-class Recipe extends BaseModel {
+class User extends BaseModel {
     constructor() {
-        super('recipe');
+        super('user');
     }
 
     createSchema() {
         const schema = new Schema({
-            name: {
+            login: {
                 type: String,
                 // required: true,
             },
-            description: {
+            passwordHash: {
                 type: String,
                 // required: false,
-            },
-            course: {
-                type: [{
-                    type: String,
-                    enum: ['dinner', 'lunch', 'breakfast', 'snack']
-                }],
-                default: ['lunch']
             }
         });
 
@@ -29,4 +22,4 @@ class Recipe extends BaseModel {
     }
 }
 
-export default Recipe;
+export default User;

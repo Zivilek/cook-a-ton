@@ -1,6 +1,6 @@
 class AbstractRepository {
     constructor(model) {
-        this.model = model;
+        this.model = model.getMongooseModel();
         this.get = this.get.bind(this);
         this.getAll = this.getAll.bind(this);
         this.insert = this.insert.bind(this);
