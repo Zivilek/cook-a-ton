@@ -1,11 +1,11 @@
 import UserRecipeTag from '../models/userRecipeTag';
 import UserRecipeTagRepository from '../repositories/userRecipeTagRepository';
-import Controller from './Controller';
+import AbstractCRUDController from './abstractCRUDController';
 const userRecipeTagRepository = new UserRecipeTagRepository(
     new UserRecipeTag()
 );
 
-class UserRecipeTagController extends Controller {
+class UserRecipeTagController extends AbstractCRUDController {
     constructor(service) {
         super(service);
     }

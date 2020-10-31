@@ -1,11 +1,11 @@
 import Recipe from "../models/recipe";
 import RecipeRepository from "./../repositories/recipeRepository";
-import Controller from './Controller';
+import AbstractCRUDController from './abstractCRUDController';
 const recipeRepository = new RecipeRepository(
     new Recipe()
 );
 
-class RecipeController extends Controller {
+class RecipeController extends AbstractCRUDController {
     constructor(service) {
         super(service);
     }

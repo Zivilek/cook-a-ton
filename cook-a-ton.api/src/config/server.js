@@ -1,19 +1,18 @@
 import express from "express";
 import bodyParser from "body-parser";
-import setRoutes from "./routes";
-import morgan from "morgan";
-const logPatter = ":method :url :status :response-time ms"
+import configureRoutes from "./routes";
+import _ from "express-async-errors";
+import error from "../middlewares/errorHandlingMiddleware";
+import routeNotFound from "../middlewares/routeNotFoundMiddleware";
+import requestLogging from "../middlewares/requestLoggingMiddleware"
 const server = express();
 
 server.use(bodyParser.json());
-server.use(morgan(logPatter));
 
-var router = express.Router();
-setRoutes(router);
-server.use('/api', router);
+server.use(requestLogging);
+configureRoutes(server);
 
-server.use(function(req, res) {
-    res.status(404).send({ url: req.originalUrl + ' not found' })
-});
+server.use(routeNotFound);
+server.use(error);
 
 export default server;

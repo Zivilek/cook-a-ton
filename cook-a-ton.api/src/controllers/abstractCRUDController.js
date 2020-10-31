@@ -1,5 +1,4 @@
-class Controller {
-
+class AbstractCRUDController {
     constructor(service) {
         this.service = service;
         this.get = this.get.bind(this);
@@ -40,7 +39,6 @@ class Controller {
 
         return res.status(response.statusCode).send(response);
     }
-
 }
 
-export default Controller;
+export default AbstractCRUDController;
