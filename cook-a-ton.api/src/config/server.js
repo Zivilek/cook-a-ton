@@ -8,8 +8,8 @@ import requestLogging from "../middlewares/requestLoggingMiddleware"
 const server = express();
 
 server.use(bodyParser.json());
-
 server.use(requestLogging);
+
 configureRoutes(server);
 
 server.use(routeNotFound);

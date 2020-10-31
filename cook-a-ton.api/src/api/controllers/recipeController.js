@@ -1,5 +1,5 @@
-import Recipe from "../models/recipe";
-import RecipeRepository from "./../repositories/recipeRepository";
+import Recipe from "../../models/recipe";
+import RecipeRepository from "../../repositories/recipeRepository";
 import AbstractCRUDController from './abstractCRUDController';
 const recipeRepository = new RecipeRepository(
     new Recipe()

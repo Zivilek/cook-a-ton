@@ -1,5 +1,5 @@
-import User from '../models/user';
-import UserRepository from '../repositories/userRepository';
+import User from '../../models/user';
+import UserRepository from '../../repositories/userRepository';
 import AbstractCRUDController from './abstractCRUDController';
 const userRepository = new UserRepository(
     new User()
