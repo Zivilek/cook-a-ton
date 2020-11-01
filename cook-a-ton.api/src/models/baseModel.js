@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 import mongooseStringQuery from "mongoose-string-query";
 import timestamps from "mongoose-timestamp";
 

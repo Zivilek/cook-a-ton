@@ -8,6 +8,18 @@ class AbstractRepository {
         this.delete = this.delete.bind(this);
     }
 
+    async find(query, skip, limit) {
+        return await this.model
+            .find(query)
+            .skip(skip)
+            .limit(limit);
+    }
+
+    async findById(id) {
+        return await this.model
+            .findById(id);
+    }
+
     async getAll(query) {
         let { skip, limit } = query;
 
@@ -18,10 +30,7 @@ class AbstractRepository {
         delete query.limit;
 
         try {
-            let items = await this.model
-                .find(query)
-                .skip(skip)
-                .limit(limit);
+            let items = await this.find(query, skip, limit);
             let total = await this.model.countDocuments();
 
             return {
@@ -40,7 +49,7 @@ class AbstractRepository {
     async get(id) {
 
         try {
-            let item = await this.model.findById(id);
+            let item = await this.findById(id);
 
             return {
                 statusCode: 200,
@@ -60,7 +69,7 @@ class AbstractRepository {
             if (item)
                 return {
                     statusCode: 201,
-                    date: item
+                    data: item
                 };
         } catch (error) {
             console.log("error", error);

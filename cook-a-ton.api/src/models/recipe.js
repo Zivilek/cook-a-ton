@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import BaseModel from "./baseModel";
 
 class Recipe extends BaseModel {
@@ -10,19 +10,23 @@ class Recipe extends BaseModel {
         const schema = new Schema({
             name: {
                 type: String,
-                // required: true,
+                required: true,
             },
             description: {
                 type: String,
-                // required: false,
+                required: false,
             },
             course: {
-                type: [{
-                    type: String,
-                    enum: ['dinner', 'lunch', 'breakfast', 'snack']
-                }],
-                default: ['lunch']
-            }
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'userCourse',
+            },
+            tags: [{
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'userRecipeTag'
+            }],
+            images: [{
+                type: Buffer
+            }]
         });
 
         return schema;

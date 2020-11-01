@@ -1,9 +1,9 @@
 import mongoose, { Schema } from "mongoose";
 import BaseModel from "./baseModel";
 
-class UserRecipeTag extends BaseModel {
+class UserCourse extends BaseModel {
     constructor() {
-        super('userRecipeTag');
+        super('userCourse');
     }
 
     createSchema() {
@@ -22,4 +22,4 @@ class UserRecipeTag extends BaseModel {
     }
 }
 
-export default UserRecipeTag;
+export default UserCourse;
