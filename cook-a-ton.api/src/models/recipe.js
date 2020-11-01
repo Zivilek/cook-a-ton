@@ -8,11 +8,11 @@ class Recipe extends BaseModel {
 
     createSchema() {
         const recipeSchema = new Schema({
-            _id: { type: Number },
+            seqId: { type: Number, required: true },
             quantity: { type: Number, required: true },
             unit: { type: String, required: true },
             name: { type: String, required: true },
-            comment: { type: String },
+            comment: { type: String }
         }, { _id: false })
 
         const schema = new Schema({
@@ -21,7 +21,8 @@ class Recipe extends BaseModel {
             description: { type: String },
             tags: [{ type: String, }],
             images: [{ type: String }],
-            steps: [recipeSchema]
+            steps: [recipeSchema],
+            source: { type: String }
         });
 
         return schema;

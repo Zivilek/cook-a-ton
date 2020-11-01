@@ -1,0 +1,117 @@
+swagger: "2.0"
+info:
+    version: 1.0.0
+    title: Cook A Ton
+    description: Recipes for home chefs from all around the world!
+basePath: /api
+tags:
+    - name: Recipe
+    - name: User
+    - name: UserRecipeTag
+    - name: UserCourse
+consumes:
+    - application/json
+produces:
+    - application/json
+definitions:
+    User:
+        required:
+            - login
+            - name
+        properties:
+            _id:
+                type: string
+                uniqueItems: true
+            name:
+                type: string
+            login:
+                type: string
+            passwordHash:
+                type: string
+    Users:
+        type: array
+        items:
+            allOf:
+                - $ref: "#/definitions/User"
+    RecipeStep:
+        required:
+            - seqId
+            - quantity
+            - unit
+            - name
+        properties:
+            _id:
+                type: string
+                uniqueItems: true
+            seqId:
+                type: number
+            quantity:
+                type: number
+            unit:
+                type: string
+            name:
+                type: string
+            comment:
+                type: string
+    Recipe:
+        required:
+            - name
+            - course
+        properties:
+            _id:
+                type: string
+                uniqueItems: true
+            name:
+                type: string
+            steps:
+                type: array
+                items:
+                    allOf:
+                        - $ref: "#/definitions/RecipeStep"
+            images:
+                type: array
+                items:
+                    type: string
+            tags:
+                type: array
+                items:
+                    type: string
+            source:
+                type: string
+            description:
+                type: string
+            course:
+                type: string
+    Recipes:
+        type: array
+        items:
+            allOf:
+                - $ref: "#/definitions/Recipe"
+    UserCourse:
+        required:
+            - name
+        properties:
+            _id:
+                type: string
+                uniqueItems: true
+            name:
+                type: string
+    UserCourses:
+        type: array
+        items:
+            allOf:
+                - $ref: "#/definitions/UserCourse"
+    UserRecipeTag:
+        required:
+            - name
+        properties:
+            _id:
+                type: string
+                uniqueItems: true
+            name:
+                type: string
+    UserRecipeTags:
+        type: array
+        items:
+            allOf:
+                - $ref: "#/definitions/UserRecipeTag"
