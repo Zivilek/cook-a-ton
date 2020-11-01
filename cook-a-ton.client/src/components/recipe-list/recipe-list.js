@@ -8,22 +8,15 @@ const RecipeList = () => {
 
   useEffect(() => {
     const renderRecipes = async () => {
-      const { data } = await client.get("/recipes");
-      setRecipes(data);
+      const { data } = await client.get("/recipe");
+      setRecipes(data.data);
     };
 
     renderRecipes();
   }, []);
 
   const renderedRecipeWidgets = recipes.map((recipe) => {
-    return (
-      <RecipeWidget
-        picture={recipe.image}
-        title={recipe.title}
-        source={recipe.source}
-        key={recipe.id}
-      />
-    );
+    return <RecipeWidget recipe={recipe} key={recipe._id} />;
   });
 
   return (

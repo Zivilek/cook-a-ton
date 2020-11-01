@@ -14,12 +14,10 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "concurrently --kill-others \"npm run start-api\" \"npm run client\"",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "start-api": "json-server ./data/recipes.json --port 3004",
-    "client": "react-scripts start"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

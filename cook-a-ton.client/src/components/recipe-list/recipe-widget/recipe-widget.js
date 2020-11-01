@@ -1,14 +1,14 @@
 import React from "react";
 import "./recipe-widget.css";
 
-const RecipeWidget = ({ picture, title, source }) => {
+const RecipeWidget = ({ recipe }) => {
   return (
     <div className="recipe-wrapper">
       <div className="image-wrapper">
-        <img src={picture} alt="recipe" className="recipe-picture" />
+        <img src={recipe.images[0]} alt="recipe" className="recipe-picture" />
       </div>
-      <div>{title}</div>
-      <div>Source: {source}</div>
+      <div>{recipe.name}</div>
+      <div>Course: {recipe.course}</div>
     </div>
   );
 };
