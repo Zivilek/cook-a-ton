@@ -8,14 +8,9 @@ class User extends BaseModel {
 
     createSchema() {
         const schema = new Schema({
-            login: {
-                type: String,
-                // required: true,
-            },
-            passwordHash: {
-                type: String,
-                // required: false,
-            }
+            name: { type: String, required: true, },
+            login: { type: String, required: true, },
+            passwordHash: { type: String }
         });
 
         return schema;

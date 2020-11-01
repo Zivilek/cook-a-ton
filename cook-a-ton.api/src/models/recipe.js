@@ -1,41 +1,31 @@
-import mongoose, { Schema } from "mongoose";
+import { Schema } from "mongoose";
 import BaseModel from "./baseModel";
 
 class Recipe extends BaseModel {
-  constructor() {
-    super("recipe");
-  }
+    constructor() {
+        super("recipe");
+    }
 
-  createSchema() {
-    const schema = new Schema({
-      name: {
-        type: String,
-        required: true,
-      },
-      description: {
-        type: String,
-        required: false,
-      },
-      course: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "userCourse",
-      },
-      tags: [
-        {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "userRecipeTag",
-        },
-      ],
-      images: [
-        {
-          // type: Buffer
-          type: String,
-        },
-      ],
-    });
+    createSchema() {
+        const recipeSchema = new Schema({
+            _id: { type: Number },
+            quantity: { type: Number, required: true },
+            unit: { type: String, required: true },
+            name: { type: String, required: true },
+            comment: { type: String },
+        }, { _id: false })
 
-    return schema;
-  }
+        const schema = new Schema({
+            name: { type: String, required: true, },
+            course: { type: String, required: true },
+            description: { type: String },
+            tags: [{ type: String, }],
+            images: [{ type: String }],
+            steps: [recipeSchema]
+        });
+
+        return schema;
+    }
 }
 
 export default Recipe;

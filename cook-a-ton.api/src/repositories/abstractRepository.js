@@ -8,11 +8,9 @@ class AbstractRepository {
         this.delete = this.delete.bind(this);
     }
 
-    async find(query, skip, limit) {
+    async find(query) {
         return await this.model
-            .find(query)
-            .skip(skip)
-            .limit(limit);
+            .apiQuery(query)
     }
 
     async findById(id) {
@@ -21,16 +19,8 @@ class AbstractRepository {
     }
 
     async getAll(query) {
-        let { skip, limit } = query;
-
-        skip = skip ? Number(skip) : 0;
-        limit = limit ? Number(limit) : 10;
-
-        delete query.skip;
-        delete query.limit;
-
         try {
-            let items = await this.find(query, skip, limit);
+            let items = await this.find(query);
             let total = await this.model.countDocuments();
 
             return {

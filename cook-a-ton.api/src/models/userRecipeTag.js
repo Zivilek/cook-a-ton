@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import { Schema } from "mongoose";
 import BaseModel from "./baseModel";
 
 class UserRecipeTag extends BaseModel {
@@ -8,14 +8,8 @@ class UserRecipeTag extends BaseModel {
 
     createSchema() {
         const schema = new Schema({
-            user: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'user'
-            },
-            name: {
-                type: String,
-                required: true,
-            }
+            user: { type: Schema.Types.ObjectId, ref: 'user' },
+            name: { type: String, required: true, }
         });
 
         return schema;
