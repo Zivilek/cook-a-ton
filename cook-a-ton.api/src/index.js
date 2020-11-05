@@ -1,7 +1,6 @@
 import './config/database';
 import server from './config/server';
-
-const PORT = process.env.PORT || 3004;
+import { PORT } from "./config/variables"
 
 server.listen(PORT, () => {
     console.log(`app running on port ${PORT}`);

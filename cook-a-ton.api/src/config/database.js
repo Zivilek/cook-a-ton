@@ -1,10 +1,9 @@
 import mongoose from "mongoose";
-import dotenv from 'dotenv';
-dotenv.config();
+import { DB_URL } from "./variables";
 
 class Connection {
     constructor() {
-        const url = process.env.DB_URL;
+        const url = DB_URL;
         mongoose.Promise = global.Promise;
         mongoose.set("useNewUrlParser", true);
         mongoose.set("useFindAndModify", false);
