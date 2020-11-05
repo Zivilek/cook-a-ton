@@ -5,6 +5,7 @@ import userCourseRoutes from '../api/routes/userCourseRoutes';
 import recipeRoutes from '../api/routes/recipeRoutes';
 import healthCheckRoutes from '../api/routes/healthCheckRoutes';
 import swaggerRoutes from "../api/routes/swaggerRoutes";
+import imageRoutes from "../api/routes/imageRoutes";
 
 export default (server) => {
     let router = express.Router();
@@ -15,6 +16,7 @@ export default (server) => {
     userRoutes(router);
     userRecipeTagRoutes(router);
     userCourseRoutes(router);
+    imageRoutes(router);
 
     server.use(`/api`, router);
 }
