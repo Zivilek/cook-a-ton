@@ -1,0 +1,11 @@
+.recipe-list-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+
+  background-color: #8bc34a;
+  height: 50px;
+}
+
+.add-recipe-button {
+}
