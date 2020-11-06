@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import mongooseStringQuery from "mongoose-string-query";
 import timestamps from "mongoose-timestamp";
 
-class BaseModel {
+class BaseSchema {
     constructor(name) {
         this.name = name;
     }
@@ -22,4 +22,4 @@ class BaseModel {
     }
 }
 
-export default BaseModel;
+export default BaseSchema;

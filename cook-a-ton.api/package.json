@@ -2,10 +2,10 @@
     "name": "cook-a-ton.api",
     "version": "1.0.0",
     "description": "",
-    "main": "src/index.js",
+    "main": "src/application/index.js",
     "scripts": {
-        "start": "babel-node src/index.js",
-        "dev:start": "nodemon --exec babel-node src/index.js"
+        "start": "babel-node src/application/index.js",
+        "dev:start": "nodemon --exec babel-node src/application/index.js"
     },
     "author": "",
     "license": "ISC",

@@ -1,9 +1,9 @@
-import User from '../../models/user';
-import UserCourse from '../../models/userCourse';
-import UserCourseRepository from '../../repositories/userCourseRepository';
+import UserSchema from '../../domain/schemas/userSchema';
+import UserCourseSchema from '../../domain/schemas/userCourseSchema';
+import UserCourseRepository from '../../dal/repositories/userCourseRepository';
 import AbstractCRUDController from './abstractCRUDController';
 const userCourseRepository = new UserCourseRepository(
-    new UserCourse()
+    new UserCourseSchema()
 );
 
 class UserCourseController extends AbstractCRUDController {

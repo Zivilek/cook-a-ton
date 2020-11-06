@@ -1,7 +1,7 @@
 import axios from "axios"
 import FormData from "form-data"
-import { IMAGES_URL, IMAGES_API_KEY } from "../../config//variables"
-import { ImageUploadError } from "../../errors/imageUploadError"
+import { IMAGES_URL, IMAGES_API_KEY } from "../../domain/configuration"
+import { ImageUploadError } from "../../common/errors/imageUploadError"
 
 async function uploadBase64Image(name, imageData) {
     try {

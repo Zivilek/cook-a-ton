@@ -1,8 +1,8 @@
-import UserRecipeTag from '../../models/userRecipeTag';
-import UserRecipeTagRepository from '../../repositories/userRecipeTagRepository';
+import UserRecipeTagSchema from '../../domain/schemas/userRecipeTagSchema';
+import UserRecipeTagRepository from '../../dal/repositories/userRecipeTagRepository';
 import AbstractCRUDController from './abstractCRUDController';
 const userRecipeTagRepository = new UserRecipeTagRepository(
-    new UserRecipeTag()
+    new UserRecipeTagSchema()
 );
 
 class UserRecipeTagController extends AbstractCRUDController {
