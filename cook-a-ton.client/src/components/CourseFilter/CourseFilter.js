@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import client from "../../api/client";
-import { Select } from "antd";
+import React, { useEffect, useState } from 'react';
+import client from '../../api/client';
+import { Select } from 'antd';
 
 //ant lib logic
 const { Option } = Select;
@@ -10,7 +10,7 @@ const CourseFilter = () => {
 
   useEffect(() => {
     const getCourses = async () => {
-      const { data } = await client.get("/userCourse");
+      const { data } = await client.get('/userCourses');
 
       setCourses(data.data);
     };

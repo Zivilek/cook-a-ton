@@ -1,7 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import './ImagesViewer.css';
 import client from '../../api/client';
 
-import { Upload } from 'antd';
+import { Upload, Button } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
+
+import { Image } from 'antd';
 import ImgCrop from 'antd-img-crop';
 
 const ImagesViewer = ({ images = [] }) => {
@@ -13,6 +17,13 @@ const ImagesViewer = ({ images = [] }) => {
     }))
   );
   const [picUrls, setPicUrls] = useState([]);
+  const [selectedPicture, setSelectedPicture] = useState('');
+
+  useEffect(() => {
+    if (defaultFileList[0]) {
+      setSelectedPicture(defaultFileList[0].url);
+    }
+  }, [defaultFileList]);
 
   const toBase64 = (file) =>
     new Promise((resolve, reject) => {
@@ -35,7 +46,7 @@ const ImagesViewer = ({ images = [] }) => {
       return;
     }
 
-    const data = await client.post('/image', { image: result });
+    const data = await client.post('/images', { image: result });
     setPicUrls([...picUrls, data.data.imageUrl]);
 
     onSuccess('Ok');
@@ -43,35 +54,31 @@ const ImagesViewer = ({ images = [] }) => {
 
   const onChange = ({ file, fileList }) => {
     setDefaultFileList(fileList);
+
+    console.log(fileList);
+    console.log(picUrls);
   };
 
   const onPreview = async (file) => {
-    let src = file.url;
-    if (!src) {
-      src = await new Promise((resolve) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file.originFileObj);
-        reader.onload = () => resolve(reader.result);
-      });
-    }
-    const image = new Image();
-    image.src = src;
-    const imgWindow = window.open(src);
-    imgWindow.document.write(image.outerHTML);
+    setSelectedPicture(file.url);
   };
 
   return (
-    <ImgCrop rotate>
-      <Upload
-        customRequest={uploadPicture}
-        onChange={onChange}
-        onPreview={onPreview}
-        defaultFileList={defaultFileList}
-        listType="picture-card"
-      >
-        {defaultFileList.length < 5 && '+ Upload'}
-      </Upload>
-    </ImgCrop>
+    <div className="image-viewer">
+      <Image className="picture-placeholder" src={selectedPicture} />
+      <ImgCrop rotate>
+        <Upload
+          customRequest={uploadPicture}
+          onChange={onChange}
+          onPreview={onPreview}
+          defaultFileList={defaultFileList}
+          listType="picture"
+          className="upload-list-inline"
+        >
+          <Button icon={<UploadOutlined />}>Upload</Button>
+        </Upload>
+      </ImgCrop>
+    </div>
   );
 };
 

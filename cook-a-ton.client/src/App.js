@@ -18,7 +18,6 @@ const App = () => {
           <RecipeList />
         </div>
       </div>
-      <ImagesViewer />
     </div>
   );
 };

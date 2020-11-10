@@ -8,7 +8,7 @@ const RecipeList = () => {
 
   useEffect(() => {
     const renderRecipes = async () => {
-      const { data } = await client.get('/recipe');
+      const { data } = await client.get('/recipes');
       setRecipes(data.data);
     };
 

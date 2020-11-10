@@ -40,6 +40,8 @@ const RecipeListHeader = () => {
         visible={visible}
         onOk={handleOk}
         onCancel={handleCancel}
+        width={1000}
+        height={1000}
       >
         <RecipeCreate />
       </Modal>

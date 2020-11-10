@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import client from "../../api/client";
-import { Select } from "antd";
+import React, { useEffect, useState } from 'react';
+import client from '../../api/client';
+import { Select } from 'antd';
 
 //ant lib logic
 const { Option } = Select;
@@ -10,7 +10,7 @@ const RecipeFilter = () => {
 
   useEffect(() => {
     const renderTags = async () => {
-      const { data } = await client.get("/userRecipeTag");
+      const { data } = await client.get('/userRecipeTags');
 
       setTags(data.data);
     };

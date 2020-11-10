@@ -1,0 +1,8 @@
+.recipe-create {
+  display: flex;
+}
+
+.recipe-form {
+  margin-left: 20px;
+  width: 100%;
+}
