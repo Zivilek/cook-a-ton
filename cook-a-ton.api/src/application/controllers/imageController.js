@@ -1,4 +1,4 @@
-import { uploadBase64Image } from "../../external/services/imageUploadService"
+import { uploadBase64Image } from "../../integrations/services/imageUploadService"
 
 class ImageController {
     constructor() {

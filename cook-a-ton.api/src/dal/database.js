@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { DB_URL } from "./variables";
+import { DB_URL } from "../domain/configuration";
 
 class Connection {
     constructor() {

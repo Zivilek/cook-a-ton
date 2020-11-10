@@ -1,7 +1,7 @@
 import { Schema } from "mongoose";
-import BaseModel from "./baseModel";
+import BaseSchema from "./baseSchema";
 
-class User extends BaseModel {
+class UserSchema extends BaseSchema {
     constructor() {
         super('user');
     }
@@ -17,4 +17,4 @@ class User extends BaseModel {
     }
 }
 
-export default User;
+export default UserSchema;

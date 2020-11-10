@@ -1,4 +1,4 @@
-import { ImageUploadError } from "../errors/imageUploadError";
+import { ImageUploadError } from "../../common/errors/imageUploadError";
 
 export default function(e, req, res, next) {
     console.error(`An error has occured: ${e.message}`);

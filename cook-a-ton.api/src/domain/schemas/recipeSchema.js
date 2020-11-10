@@ -1,7 +1,7 @@
 import { Schema } from "mongoose";
-import BaseModel from "./baseModel";
+import BaseSchema from "./baseSchema";
 
-class Recipe extends BaseModel {
+class RecipeSchema extends BaseSchema {
     constructor() {
         super("recipe");
     }
@@ -29,4 +29,4 @@ class Recipe extends BaseModel {
     }
 }
 
-export default Recipe;
+export default RecipeSchema;

@@ -1,8 +1,8 @@
-import Recipe from "../../models/recipe";
-import RecipeRepository from "../../repositories/recipeRepository";
+import RecipeSchema from "../../domain/schemas/recipeSchema";
+import RecipeRepository from "../../dal/repositories/recipeRepository";
 import AbstractCRUDController from './abstractCRUDController';
 const recipeRepository = new RecipeRepository(
-    new Recipe()
+    new RecipeSchema()
 );
 
 class RecipeController extends AbstractCRUDController {
