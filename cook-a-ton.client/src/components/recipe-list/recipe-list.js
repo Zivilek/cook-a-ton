@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import RecipeWidget from "./recipe-widget/recipe-widget";
-import client from "../../api/client";
-import "./recipe-list.css";
+import React, { useState, useEffect } from 'react';
+import RecipeWidget from './recipe-widget/recipe-widget';
+import client from '../../api/client';
+import './recipe-list.css';
 
 const RecipeList = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
     const renderRecipes = async () => {
-      const { data } = await client.get("/recipe");
+      const { data } = await client.get('/recipe');
       setRecipes(data.data);
     };
 

@@ -1,7 +1,8 @@
-import React from "react";
-import "./recipe-widget.css";
+import React from 'react';
+import './recipe-widget.css';
 
-import TagList from "../../TagList/TagList";
+import TagList from '../../TagList/TagList';
+import ImagesViewer from '../../ImagesViewer/ImagesViewer';
 
 const RecipeWidget = ({ recipe }) => {
   return (
@@ -11,7 +12,7 @@ const RecipeWidget = ({ recipe }) => {
           src={
             recipe.images.length
               ? recipe.images[0]
-              : "https://picsum.photos/200"
+              : 'https://picsum.photos/200'
           }
           alt="recipe"
           className="recipe-picture"
@@ -21,6 +22,8 @@ const RecipeWidget = ({ recipe }) => {
       <br />
       <div>Course: {recipe.course}</div>
       <TagList tags={recipe.tags} />
+
+      <ImagesViewer images={recipe.images} />
     </div>
   );
 };

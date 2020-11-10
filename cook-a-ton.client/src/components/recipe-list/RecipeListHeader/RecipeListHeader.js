@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import "./RecipeListHeader.css";
+import React, { useState } from 'react';
+import './RecipeListHeader.css';
 
-import { Button } from "antd";
-import { PlusCircleOutlined } from "@ant-design/icons";
+import RecipeCreate from '../RecipeCreate/RecipeCreate';
 
-import { Modal } from "antd";
+import { Button } from 'antd';
+import { PlusCircleOutlined } from '@ant-design/icons';
+
+import { Modal } from 'antd';
 
 const RecipeListHeader = () => {
   const [visible, setVisible] = useState(false);
@@ -39,9 +41,7 @@ const RecipeListHeader = () => {
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <RecipeCreate />
       </Modal>
     </div>
   );
