@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import client from '../../api/client';
 import { Select } from 'antd';
+import recipeTagDataService from '../../dataService/RecipeTagDataService';
 
 //ant lib logic
 const { Option } = Select;
@@ -10,7 +10,7 @@ const RecipeFilter = () => {
 
   useEffect(() => {
     const renderTags = async () => {
-      const { data } = await client.get('/userRecipeTags');
+      const { data } = await recipeTagDataService.getRecipeTags();
 
       setTags(data.data);
     };

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './ImagesViewer.css';
-import client from '../../api/client';
 
 import { Upload, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 
 import { Image } from 'antd';
 import ImgCrop from 'antd-img-crop';
+import imagesDataService from '../../dataService/ImagesDataService';
 
 const ImagesViewer = ({ images = [] }) => {
   const [defaultFileList, setDefaultFileList] = useState(
@@ -46,7 +46,7 @@ const ImagesViewer = ({ images = [] }) => {
       return;
     }
 
-    const data = await client.post('/images', { image: result });
+    const data = await imagesDataService.postImages({ image: result });
     setPicUrls([...picUrls, data.data.imageUrl]);
 
     onSuccess('Ok');

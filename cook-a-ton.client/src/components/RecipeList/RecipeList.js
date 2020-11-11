@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import RecipeWidget from './RecipeWidget/RecipeWidget';
 import './RecipeList.css';
-import recipeDataService from '../../api/RecipeDataService';
+import recipeDataService from '../../dataService/RecipeDataService';
 
 const RecipeList = () => {
   const [recipes, setRecipes] = useState([]);

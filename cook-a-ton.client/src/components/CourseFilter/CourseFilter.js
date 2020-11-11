@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import client from '../../api/client';
 import { Select } from 'antd';
+import recipeCourseDataService from '../../dataService/RecipeCourseDataService';
 
 //ant lib logic
 const { Option } = Select;
@@ -10,7 +11,7 @@ const CourseFilter = () => {
 
   useEffect(() => {
     const getCourses = async () => {
-      const { data } = await client.get('/userCourses');
+      const { data } = await recipeCourseDataService.getCourses();
 
       setCourses(data.data);
     };

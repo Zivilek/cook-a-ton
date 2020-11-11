@@ -1,7 +1,7 @@
 import React from 'react';
-import RecipeList from './components/recipe-list/recipe-list';
-import RecipeListHeader from './components/recipe-list/RecipeListHeader/RecipeListHeader';
-import SideBar from './components/side-bar/side-bar';
+import RecipeList from './components/RecipeList/RecipeList';
+import RecipeListHeader from './components/RecipeList/RecipeListHeader/RecipeListHeader';
+import SideBar from './components/SideBar/SideBar';
 import Header from './components/Header/Header';
 import './App.css';
 
