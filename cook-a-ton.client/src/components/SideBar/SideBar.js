@@ -1,9 +1,9 @@
-import React from "react";
-import "./side-bar.css";
-import { Input } from "antd";
+import React from 'react';
+import './SideBar.css';
+import { Input } from 'antd';
 
-import TagFilter from "../TagFilter/TagFilter";
-import CourseFilter from "../CourseFilter/CourseFilter";
+import TagFilter from '../TagFilter/TagFilter';
+import CourseFilter from '../CourseFilter/CourseFilter';
 
 const { Search } = Input;
 

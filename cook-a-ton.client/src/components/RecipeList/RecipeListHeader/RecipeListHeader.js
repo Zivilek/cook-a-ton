@@ -26,7 +26,7 @@ const RecipeListHeader = () => {
   };
 
   return (
-    <div className="recipe-list-header">
+    <div className="RecipeList-header">
       <Button
         className="add-recipe-button"
         icon={<PlusCircleOutlined />}
