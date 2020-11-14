@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import client from '../../api/client';
 import { Select } from 'antd';
 import recipeCourseDataService from '../../dataService/RecipeCourseDataService';
 
 //ant lib logic
 const { Option } = Select;
 
-const CourseFilter = () => {
+const CourseFilter = ({ onSelect = () => {} }) => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
@@ -20,11 +19,11 @@ const CourseFilter = () => {
   }, []);
 
   const renderOptions = courses.map((course) => {
-    return <Option key={course._id}>{course.name}</Option>;
+    return <Option key={course.name}>{course.name}</Option>;
   });
 
   function handleChange(value) {
-    console.log(`selected ${value}`);
+    onSelect(value);
   }
 
   return (

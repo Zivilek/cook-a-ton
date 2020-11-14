@@ -5,7 +5,7 @@ import recipeTagDataService from '../../dataService/RecipeTagDataService';
 //ant lib logic
 const { Option } = Select;
 
-const RecipeFilter = () => {
+const TagFilter = ({ onSelect = () => {} }) => {
   const [tags, setTags] = useState([]);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const RecipeFilter = () => {
   });
 
   function handleChange(value) {
-    console.log(`selected ${value}`);
+    onSelect(value);
   }
 
   return (
@@ -38,4 +38,4 @@ const RecipeFilter = () => {
   );
 };
 
-export default RecipeFilter;
+export default TagFilter;
