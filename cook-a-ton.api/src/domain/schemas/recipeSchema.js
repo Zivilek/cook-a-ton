@@ -7,7 +7,7 @@ class RecipeSchema extends BaseSchema {
     }
 
     createSchema() {
-        const recipeSchema = new Schema({
+        const recipeStepSchema = new Schema({
             seqId: { type: Number, required: true },
             quantity: { type: Number, required: true },
             unit: { type: String, required: true },
@@ -17,11 +17,11 @@ class RecipeSchema extends BaseSchema {
 
         const schema = new Schema({
             name: { type: String, required: true, },
-            course: { type: String, required: true },
+            course: { type: Schema.Types.ObjectId, ref: 'userCourse' },
             description: { type: String },
-            tags: [{ type: String, }],
+            tags: [{ type: Schema.Types.ObjectId, ref: 'userRecipeTag' }],
             images: [{ type: String }],
-            steps: [recipeSchema],
+            steps: [recipeStepSchema],
             source: { type: String }
         });
 
@@ -29,4 +29,4 @@ class RecipeSchema extends BaseSchema {
     }
 }
 
-export default RecipeSchema;
+export default new RecipeSchema();

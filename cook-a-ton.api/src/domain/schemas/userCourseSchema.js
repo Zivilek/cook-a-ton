@@ -16,4 +16,4 @@ class UserCourseSchema extends BaseSchema {
     }
 }
 
-export default UserCourseSchema;
+export default new UserCourseSchema();

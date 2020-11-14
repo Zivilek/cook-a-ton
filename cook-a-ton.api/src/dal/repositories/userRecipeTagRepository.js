@@ -1,4 +1,5 @@
 import AbstractRepository from './abstractRepository';
+import userRecipeTagSchema from '../../domain/schemas/userRecipeTagSchema';
 
 class UserRecipeTagRepository extends AbstractRepository {
     constructor(model) {
@@ -6,4 +7,4 @@ class UserRecipeTagRepository extends AbstractRepository {
     }
 };
 
-export default UserRecipeTagRepository;
+export default new UserRecipeTagRepository(userRecipeTagSchema);

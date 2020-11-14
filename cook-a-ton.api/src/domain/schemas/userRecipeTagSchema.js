@@ -16,4 +16,4 @@ class UserRecipeTagSchema extends BaseSchema {
     }
 }
 
-export default UserRecipeTagSchema;
+export default new UserRecipeTagSchema();

@@ -17,4 +17,4 @@ class UserSchema extends BaseSchema {
     }
 }
 
-export default UserSchema;
+export default new UserSchema();

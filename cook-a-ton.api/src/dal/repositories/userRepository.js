@@ -1,4 +1,5 @@
 import AbstractRepository from './abstractRepository';
+import userSchema from '../../domain/schemas/userSchema';
 
 class UserRepository extends AbstractRepository {
     constructor(model) {
@@ -6,4 +7,4 @@ class UserRepository extends AbstractRepository {
     }
 };
 
-export default UserRepository;
+export default new UserRepository(userSchema);
