@@ -1,7 +1,7 @@
 import { ImageUploadError } from "../../common/errors/imageUploadError";
 
 export default function(e, req, res, next) {
-    console.error(`An error has occured: ${e.message}`);
+    console.error(`An error has occured: ${e.message} \n Stack trace: ${e.stack}`);
     if (e instanceof ImageUploadError) {
         return res.status(400).send({
             error: {

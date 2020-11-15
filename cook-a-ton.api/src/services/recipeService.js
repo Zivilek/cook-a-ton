@@ -1,4 +1,4 @@
-import recipeRepository from '../../dal/repositories/recipeRepository';
+import recipeRepository from '../dal/repositories/recipeRepository';
 
 class RecipeService {
     constructor() {
