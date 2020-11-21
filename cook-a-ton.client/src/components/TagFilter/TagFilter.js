@@ -19,7 +19,7 @@ const TagFilter = ({ onSelect = () => {} }) => {
   }, []);
 
   const renderOptions = tags.map((tag) => {
-    return <Option key={tag.name}>{tag.name}</Option>;
+    return <Option key={tag._id}>{tag.name}</Option>;
   });
 
   function handleChange(value) {

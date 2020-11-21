@@ -19,7 +19,7 @@ const CourseFilter = ({ onSelect = () => {} }) => {
   }, []);
 
   const renderOptions = courses.map((course) => {
-    return <Option key={course.name}>{course.name}</Option>;
+    return <Option key={course._id}>{course.name}</Option>;
   });
 
   function handleChange(value) {

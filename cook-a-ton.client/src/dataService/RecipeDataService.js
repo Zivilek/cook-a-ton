@@ -8,6 +8,10 @@ class RecipeDataService {
   getRecipe = (id) => {
     return client.get(`/recipes/${id}`);
   };
+
+  postRecipe = (recipe) => {
+    return client.post('/recipes', recipe);
+  };
 }
 
 export default new RecipeDataService();

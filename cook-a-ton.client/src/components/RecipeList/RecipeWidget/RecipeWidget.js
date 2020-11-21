@@ -20,7 +20,7 @@ const RecipeWidget = ({ recipe }) => {
       </div>
       <h3>{recipe.name}</h3>
       <br />
-      <div>Course: {recipe.course}</div>
+      <div>Course: {recipe.course.name}</div>
       <TagList tags={recipe.tags} />
 
       {/* <ImagesViewer images={recipe.images} /> */}
