@@ -1,5 +1,5 @@
 import AbstractRepository from './abstractRepository';
-import userCourseSchema from '../../domain/schemas/userCourseSchema';
+import userCourseSchema from '../schemas/userCourseSchema';
 import { RecipeCourseEntity } from '../../domain/entities/recipeCourseEntity';
 import { Document, Model } from 'mongoose';
 

@@ -1,4 +1,3 @@
-import { Document } from "mongoose"
 import { BaseEntity } from "./baseEntity";
 
 type RecipeStepEntity = BaseEntity & {

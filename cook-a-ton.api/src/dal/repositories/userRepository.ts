@@ -1,5 +1,5 @@
 import AbstractRepository from './abstractRepository';
-import userSchema from '../../domain/schemas/userSchema';
+import userSchema from '../schemas/userSchema';
 import { UserEntity } from '../../domain/entities/userEntity';
 import { Document, Model } from 'mongoose';
 

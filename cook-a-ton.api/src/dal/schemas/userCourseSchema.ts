@@ -1,5 +1,5 @@
 import { Schema } from "mongoose";
-import { RecipeCourseEntity } from "../entities/recipeCourseEntity";
+import { RecipeCourseEntity } from "../../domain/entities/recipeCourseEntity";
 import BaseSchema from "./baseSchema";
 
 class UserCourseSchema extends BaseSchema<RecipeCourseEntity> {

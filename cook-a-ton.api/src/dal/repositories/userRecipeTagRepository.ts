@@ -1,5 +1,5 @@
 import AbstractRepository from './abstractRepository';
-import userRecipeTagSchema from '../../domain/schemas/userRecipeTagSchema';
+import userRecipeTagSchema from '../schemas/userRecipeTagSchema';
 import { RecipeTagEntity } from '../../domain/entities/recipeTagEntity';
 import { Document, Model } from 'mongoose';
 

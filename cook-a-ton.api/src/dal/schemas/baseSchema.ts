@@ -1,5 +1,5 @@
 import { Document, model, Model, Schema, Types } from "mongoose";
-import { BaseEntity } from "../entities/baseEntity";
+import { BaseEntity } from "../../domain/entities/baseEntity";
 
 abstract class BaseSchema<T extends BaseEntity> {
     name: string;

@@ -11,9 +11,9 @@ class RecipeController extends AbstractCRUDController {
         const { id } = req.params;
 
         let response = await this.service.get(id);
-        //let responseModel = recipeMapper.toModel(response.data);
+        let responseModel = recipeMapper.toModel(response.data);
 
-        return res.status(200).send(response);
+        return res.status(200).send(responseModel);
     }
 }
 
