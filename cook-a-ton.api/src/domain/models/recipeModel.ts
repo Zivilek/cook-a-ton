@@ -4,7 +4,7 @@ import { RecipeStepModel } from "./recipeStepModel";
 import { RecipeTagModel } from "./recipeTagModel";
 
 type RecipeModel = {
-    id: Types.ObjectId;
+    id?: Types.ObjectId;
     name: string;
     courses?: RecipeCourseModel[] | Types.ObjectId[];
     tags?: RecipeTagModel[] | Types.ObjectId[];

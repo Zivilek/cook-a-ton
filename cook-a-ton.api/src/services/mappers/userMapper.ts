@@ -13,6 +13,15 @@ class UserMapper {
             login: userEntity.login,
         };
     }
+
+
+    toEntity(userModel: UserModel): UserEntity {
+        return {
+            _id: userModel.id,
+            name: userModel.name,
+            login: userModel.login,
+        }
+    }
 }
 
 export default new UserMapper();

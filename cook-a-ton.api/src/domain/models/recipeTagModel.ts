@@ -1,7 +1,7 @@
 import { Types } from "mongoose"
 
 type RecipeTagModel = {
-    id: Types.ObjectId;
+    id?: Types.ObjectId;
     name: string;
 }
 

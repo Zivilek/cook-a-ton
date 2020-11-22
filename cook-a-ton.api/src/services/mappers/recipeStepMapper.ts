@@ -15,6 +15,16 @@ class RecipeStepMapper {
             comment: recipeStepEntity.comment
         }
     }
+
+    toEntity(recipeStepModel: RecipeStepModel): RecipeStepEntity {
+        return {
+            seqId: recipeStepModel.seqId,
+            quantity: recipeStepModel.quantity,
+            unit: recipeStepModel.unit,
+            name: recipeStepModel.name,
+            comment: recipeStepModel.comment
+        }
+    }
 }
 
 export default new RecipeStepMapper();

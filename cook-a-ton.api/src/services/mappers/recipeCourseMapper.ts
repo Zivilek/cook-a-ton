@@ -7,10 +7,16 @@ class RecipeCourseMapper {
     }
 
     toModel(recipeCourseEntity: RecipeCourseEntity): RecipeCourseModel {
-        console.log({ recipeCourseEntity })
         return {
             id: recipeCourseEntity._id,
             name: recipeCourseEntity.name,
+        }
+    }
+
+    toEntity(recipeCourseModel: RecipeCourseModel): RecipeCourseEntity {
+        return {
+            _id: recipeCourseModel.id,
+            name: recipeCourseModel.name,
         }
     }
 }

@@ -12,6 +12,13 @@ class RecipeTagMapper {
             name: recipeTagEntity.name
         };
     }
+
+    toEntity(recipeTagModel: RecipeTagModel): RecipeTagEntity {
+        return {
+            _id: recipeTagModel.id,
+            name: recipeTagModel.name
+        };
+    }
 }
 
 export default new RecipeTagMapper();
