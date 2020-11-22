@@ -1,6 +1,6 @@
-import { Document } from "mongoose"
+import { BaseEntity } from "./baseEntity";
 
-type UserEntity = Document & {
+type UserEntity = BaseEntity & {
     name: string;
     login: string;
     passwordHash: string;

@@ -1,12 +1,13 @@
 import { Schema } from "mongoose";
+import { RecipeEntity } from "../entities/recipeEntity";
 import BaseSchema from "./baseSchema";
 
-class RecipeSchema extends BaseSchema {
+class RecipeSchema extends BaseSchema<RecipeEntity> {
     constructor() {
         super("recipe");
     }
 
-    createSchema() {
+    protected createSchema() {
         const recipeStepSchema = new Schema({
             seqId: { type: Number, required: true },
             quantity: { type: Number, required: true },
@@ -15,9 +16,9 @@ class RecipeSchema extends BaseSchema {
             comment: { type: String }
         }, { _id: false })
 
-        const schema = new Schema({
+        const recipeSchema = new Schema({
             name: { type: String, required: true, },
-            course: { type: Schema.Types.ObjectId, ref: 'userCourse' },
+            courses: [{ type: Schema.Types.ObjectId, ref: 'userCourse' }],
             description: { type: String },
             tags: [{ type: Schema.Types.ObjectId, ref: 'userRecipeTag' }],
             images: [{ type: String }],
@@ -25,8 +26,8 @@ class RecipeSchema extends BaseSchema {
             source: { type: String }
         }, { timestamps: true });
 
-        return schema;
+        return recipeSchema;
     }
 }
 
-export default new RecipeSchema();
+export default new RecipeSchema().getMongooseModel();

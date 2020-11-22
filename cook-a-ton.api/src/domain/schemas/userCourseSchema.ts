@@ -1,12 +1,13 @@
 import { Schema } from "mongoose";
+import { RecipeCourseEntity } from "../entities/recipeCourseEntity";
 import BaseSchema from "./baseSchema";
 
-class UserRecipeTagSchema extends BaseSchema {
+class UserCourseSchema extends BaseSchema<RecipeCourseEntity> {
     constructor() {
-        super('userRecipeTag');
+        super('userCourse');
     }
 
-    createSchema() {
+    protected createSchema() {
         const schema = new Schema({
             user: { type: Schema.Types.ObjectId, ref: 'user' },
             name: { type: String, required: true, }
@@ -16,4 +17,4 @@ class UserRecipeTagSchema extends BaseSchema {
     }
 }
 
-export default new UserRecipeTagSchema();
+export default new UserCourseSchema().getMongooseModel();

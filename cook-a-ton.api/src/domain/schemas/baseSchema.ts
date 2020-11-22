@@ -1,21 +1,20 @@
-import { Document, model, Model, Schema } from "mongoose";
+import { Document, model, Model, Schema, Types } from "mongoose";
+import { BaseEntity } from "../entities/baseEntity";
 
-abstract class BaseSchema<T extends Document> {
+abstract class BaseSchema<T extends BaseEntity> {
     name: string;
     constructor(name: string) {
         this.name = name;
     }
 
-    abstract createSchema(): Schema;
+    protected abstract createSchema(): Schema;
 
-    initSchema(schema: Schema) {
-        model<T>(this.name, schema, this.name);
+    private initSchema(schema: Schema): Model<Document & T> {
+        return model<Document & T>(this.name, schema, this.name);
     }
 
-    getMongooseModel(): Model<T> {
-        this.initSchema(this.createSchema());
-
-        return model<T>(this.name);
+    getMongooseModel(): Model<Document & T> {
+        return this.initSchema(this.createSchema());
     }
 }
 

@@ -1,6 +1,7 @@
-import { Document } from "mongoose"
+import { Types } from "mongoose"
+import { BaseEntity } from "./baseEntity"
 
-type RecipeCourseEntity = Document & {
+type RecipeCourseEntity = BaseEntity & {
     name: string;
 }
 

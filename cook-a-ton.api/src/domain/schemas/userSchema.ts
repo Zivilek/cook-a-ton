@@ -7,7 +7,7 @@ class UserSchema extends BaseSchema<UserEntity> {
         super('user');
     }
 
-    createSchema(): Schema {
+    protected createSchema(): Schema {
         const schema = new Schema({
             name: { type: String, required: true, },
             login: { type: String, required: true, },
@@ -18,4 +18,4 @@ class UserSchema extends BaseSchema<UserEntity> {
     }
 }
 
-export default new UserSchema();
+export default new UserSchema().getMongooseModel();

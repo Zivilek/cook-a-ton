@@ -1,15 +1,16 @@
-import { Document, Types } from "mongoose"
+import { Types } from "mongoose"
+import { BaseEntity } from "./baseEntity"
 import { RecipeCourseEntity } from "./recipeCourseEntity"
 import { RecipeStepEntity } from "./recipeStepEntity"
 import { RecipeTagEntity } from "./recipeTagEntity"
 
-type RecipeEntity = Document & {
+type RecipeEntity = BaseEntity & {
     name: string;
-    course?: RecipeCourseEntity | Types.ObjectId;
-    tags?: [RecipeTagEntity] | [Types.ObjectId];
-    images?: [string];
+    courses?: RecipeCourseEntity[] | Types.ObjectId[];
+    tags?: RecipeTagEntity[] | Types.ObjectId[];
+    images?: string[];
     source: string;
-    steps?: [RecipeStepEntity];
+    steps?: RecipeStepEntity[];
 }
 
 export { RecipeEntity }

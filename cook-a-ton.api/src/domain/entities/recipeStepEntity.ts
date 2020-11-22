@@ -1,6 +1,7 @@
 import { Document } from "mongoose"
+import { BaseEntity } from "./baseEntity";
 
-type RecipeStepEntity = Document & {
+type RecipeStepEntity = BaseEntity & {
     seqId: number;
     quantity: number;
     unit: string;

@@ -1,6 +1,6 @@
 import express from "express";
 import configureRoutes from "./routes";
-import _ from "express-async-errors";
+import "express-async-errors";
 import error from "./middlewares/errorHandlingMiddleware";
 import routeNotFound from "./middlewares/routeNotFoundMiddleware";
 import requestLogging from "./middlewares/requestLoggingMiddleware";

@@ -1,10 +1,10 @@
-import { Schema, Model, Document, Types } from "mongoose";
-import BaseSchema from "../../domain/schemas/baseSchema";
+import { Model, Document, Types } from "mongoose";
+import { BaseEntity } from "../../domain/entities/baseEntity";
 
-class AbstractRepository<T extends Document> {
+class AbstractRepository<T extends BaseEntity> {
     model: any;
-    constructor(model: BaseSchema<T>) {
-        this.model = model.getMongooseModel();
+    constructor(model: Model<Document & T>) {
+        this.model = model;
         this.get = this.get.bind(this);
         this.getAll = this.getAll.bind(this);
         this.insert = this.insert.bind(this);

@@ -1,10 +1,10 @@
 import AbstractRepository from './abstractRepository';
 import userSchema from '../../domain/schemas/userSchema';
 import { UserEntity } from '../../domain/entities/userEntity';
-import BaseSchema from '../../domain/schemas/baseSchema';
+import { Document, Model } from 'mongoose';
 
 class UserRepository extends AbstractRepository<UserEntity> {
-    constructor(schema: BaseSchema<UserEntity>) {
+    constructor(schema: Model<Document & UserEntity>) {
         super(schema);
     }
 };

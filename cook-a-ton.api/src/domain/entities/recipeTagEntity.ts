@@ -1,6 +1,6 @@
-import { Document } from "mongoose"
+import { BaseEntity } from "./baseEntity";
 
-type RecipeTagEntity = Document & {
+type RecipeTagEntity = BaseEntity & {
     name: string;
 }
 
