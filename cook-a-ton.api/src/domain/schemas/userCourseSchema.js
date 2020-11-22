@@ -10,7 +10,7 @@ class UserCourseSchema extends BaseSchema {
         const schema = new Schema({
             user: { type: Schema.Types.ObjectId, ref: 'user' },
             name: { type: String, required: true, }
-        });
+        }, { timestamps: true });
 
         return schema;
     }

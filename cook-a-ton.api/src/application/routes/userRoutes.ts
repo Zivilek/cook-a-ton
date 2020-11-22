@@ -1,6 +1,7 @@
+import { Router } from 'express';
 import userController from '../controllers/userController';
 
-export default (router) => {
+export default (router: Router) => {
     router.get(`/users/:id`, userController.get);
     router.get(`/users`, userController.getAll);
     router.post(`/users`, userController.insert)

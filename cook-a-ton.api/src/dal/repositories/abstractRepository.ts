@@ -1,5 +1,9 @@
-class AbstractRepository {
-    constructor(model) {
+import { Schema, Model, Document, Types } from "mongoose";
+import BaseSchema from "../../domain/schemas/baseSchema";
+
+class AbstractRepository<T extends Document> {
+    model: any;
+    constructor(model: BaseSchema<T>) {
         this.model = model.getMongooseModel();
         this.get = this.get.bind(this);
         this.getAll = this.getAll.bind(this);
@@ -8,17 +12,17 @@ class AbstractRepository {
         this.delete = this.delete.bind(this);
     }
 
-    async find(query) {
+    async find(query: string) {
         return await this.model
-            .apiQuery(query)
+            .find(query)
     }
 
-    async findById(id) {
+    async findById(id: Types.ObjectId) {
         return await this.model
-            .findById(id);
+            .findOne({ _id: id });
     }
 
-    async getAll(query) {
+    async getAll(query: string) {
         try {
             let items = await this.find(query);
             let total = await this.model.countDocuments();
@@ -36,7 +40,7 @@ class AbstractRepository {
         }
     }
 
-    async get(id) {
+    async get(id: Types.ObjectId) {
 
         try {
             let item = await this.findById(id);
@@ -53,7 +57,7 @@ class AbstractRepository {
         }
     }
 
-    async insert(data) {
+    async insert(data: Document) {
         try {
             let item = await this.model.create(data);
             if (item)
@@ -71,7 +75,7 @@ class AbstractRepository {
         }
     }
 
-    async update(id, data) {
+    async update(id: Types.ObjectId, data: Document) {
         try {
             let item = await this.model.findByIdAndUpdate(id, data, { new: true });
             return {
@@ -86,7 +90,7 @@ class AbstractRepository {
         }
     }
 
-    async delete(id) {
+    async delete(id: Types.ObjectId) {
         try {
             let item = await this.model.findByIdAndDelete(id);
             if (!item)

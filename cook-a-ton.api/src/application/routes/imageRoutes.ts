@@ -1,5 +1,6 @@
+import { Router } from 'express';
 import imageController from '../controllers/imageController';
 
-export default (router) => {
+export default (router: Router) => {
     router.post(`/images`, imageController.post);
 }

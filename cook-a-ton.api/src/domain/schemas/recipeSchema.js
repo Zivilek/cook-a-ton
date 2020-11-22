@@ -23,7 +23,7 @@ class RecipeSchema extends BaseSchema {
             images: [{ type: String }],
             steps: [recipeStepSchema],
             source: { type: String }
-        });
+        }, { timestamps: true });
 
         return schema;
     }

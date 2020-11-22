@@ -3,7 +3,7 @@ import FormData from "form-data"
 import { IMAGES_URL, IMAGES_API_KEY } from "../../domain/configuration"
 import { ImageUploadError } from "../../common/errors/imageUploadError"
 
-async function uploadBase64Image(name, imageData) {
+async function uploadBase64Image(name: string, imageData: string) {
     try {
         let body = new FormData();
         body.append('image', imageData || "");

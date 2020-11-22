@@ -1,6 +1,7 @@
+import { Router } from 'express';
 import recipeController from '../controllers/recipeController';
 
-export default (router) => {
+export default (router: Router) => {
     router.get(`/recipes/:id`, recipeController.get);
     router.get(`/recipes`, recipeController.getAll);
     router.post(`/recipes`, recipeController.insert)

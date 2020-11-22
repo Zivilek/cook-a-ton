@@ -8,9 +8,9 @@ class RecipeRepository extends AbstractRepository {
 
     async find(query) {
         return await this.model
-            .apiQuery(query)
-            // .populate('tags')
-            // .populate('course');
+            .find(query)
+            .populate('tags')
+            .populate('course');
     }
 
     async findById(id) {

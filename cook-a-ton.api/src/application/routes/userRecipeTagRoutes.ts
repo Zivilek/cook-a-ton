@@ -1,6 +1,7 @@
+import { Router } from "express";
 import userRecipeTagController from "../controllers/userRecipeTagController";
 
-export default (router) => {
+export default (router: Router) => {
     router.get(`/userRecipeTags/:id`, userRecipeTagController.get);
     router.get(`/userRecipeTags`, userRecipeTagController.getAll);
     router.post(`/userRecipeTags`, userRecipeTagController.insert);
