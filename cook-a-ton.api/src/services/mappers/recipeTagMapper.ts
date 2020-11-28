@@ -9,14 +9,16 @@ class RecipeTagMapper {
     toModel(recipeTagEntity: RecipeTagEntity): RecipeTagModel {
         return {
             id: recipeTagEntity._id,
-            name: recipeTagEntity.name
+            name: recipeTagEntity.name,
+            seqId: recipeTagEntity.seqId,
         };
     }
 
     toEntity(recipeTagModel: RecipeTagModel): RecipeTagEntity {
         return {
             _id: recipeTagModel.id,
-            name: recipeTagModel.name
+            name: recipeTagModel.name,
+            seqId: recipeTagModel.seqId,
         };
     }
 }

@@ -10,6 +10,7 @@ class UserCourseSchema extends BaseSchema<RecipeCourseEntity> {
     protected createSchema() {
         const schema = new Schema({
             user: { type: Schema.Types.ObjectId, ref: 'user' },
+            seqId: { type: Number, required: true },
             name: { type: String, required: true, }
         }, { timestamps: true });
 

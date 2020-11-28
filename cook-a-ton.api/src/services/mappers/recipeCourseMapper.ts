@@ -10,6 +10,7 @@ class RecipeCourseMapper {
         return {
             id: recipeCourseEntity._id,
             name: recipeCourseEntity.name,
+            seqId: recipeCourseEntity.seqId,
         }
     }
 
@@ -17,6 +18,7 @@ class RecipeCourseMapper {
         return {
             _id: recipeCourseModel.id,
             name: recipeCourseModel.name,
+            seqId: recipeCourseModel.seqId,
         }
     }
 }

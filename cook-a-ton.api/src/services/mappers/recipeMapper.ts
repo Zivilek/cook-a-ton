@@ -21,7 +21,7 @@ class RecipeMapper {
             tags: (recipeEntity.tags as RecipeTagEntity[])?.map((tag) => recipeTagMapper.toModel(tag)) || recipeEntity.tags,
             images: recipeEntity.images,
             source: recipeEntity.source,
-            steps: recipeEntity.steps?.map((step) => recipeStepMapper.toModel(step)).sort((a, b) => a.seqId - b.seqId)
+            steps: recipeEntity.steps?.map((step) => recipeStepMapper.toModel(step)).sort((a, b) => a.seqId - b.seqId),
         }
     }
 
@@ -33,7 +33,7 @@ class RecipeMapper {
             tags: (recipeModel.tags as RecipeTagModel[])?.map((tag) => tag.id!) || recipeModel.tags,
             images: recipeModel.images,
             source: recipeModel.source,
-            steps: recipeModel.steps?.map((step) => recipeStepMapper.toModel(step))
+            steps: recipeModel.steps?.map((step) => recipeStepMapper.toModel(step)),
         }
     }
 }

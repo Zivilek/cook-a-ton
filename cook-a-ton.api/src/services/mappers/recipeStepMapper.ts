@@ -12,7 +12,7 @@ class RecipeStepMapper {
             quantity: recipeStepEntity.quantity,
             unit: recipeStepEntity.unit,
             name: recipeStepEntity.name,
-            comment: recipeStepEntity.comment
+            comment: recipeStepEntity.comment,
         }
     }
 
@@ -22,7 +22,7 @@ class RecipeStepMapper {
             quantity: recipeStepModel.quantity,
             unit: recipeStepModel.unit,
             name: recipeStepModel.name,
-            comment: recipeStepModel.comment
+            comment: recipeStepModel.comment,
         }
     }
 }
