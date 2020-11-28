@@ -13,7 +13,7 @@ class UserRecipeTagRepository extends AbstractRepository<RecipeTagEntity> {
         return (latestSeqIdEntity.seqId || 0) + 1;
     }
 
-    async insert(data: RecipeTagEntity & Document) {
+    async insert(data: RecipeTagEntity) {
         try {
             data.seqId = await this.getNewSeqIdForUser(data.user!);
             let item = await this.model.create(data);

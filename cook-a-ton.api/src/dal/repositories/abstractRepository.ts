@@ -57,7 +57,7 @@ class AbstractRepository<T extends BaseEntity> {
         }
     }
 
-    async insert(data: Document) {
+    async insert(data: T) {
         try {
             let item = await this.model.create(data);
             if (item)
@@ -75,7 +75,7 @@ class AbstractRepository<T extends BaseEntity> {
         }
     }
 
-    async update(id: Types.ObjectId, data: Document) {
+    async update(id: Types.ObjectId, data: T) {
         try {
             let item = await this.model.findByIdAndUpdate(id, data, { new: true });
             return {
