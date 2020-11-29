@@ -12,12 +12,12 @@ class AbstractRepository<T extends BaseEntity> {
         this.delete = this.delete.bind(this);
     }
 
-    async find(query: string) {
+    protected async find(query: string): Promise<T[]> {
         return await this.model
             .find(query)
     }
 
-    async findById(id: Types.ObjectId) {
+    protected async findById(id: Types.ObjectId): Promise<T> {
         return await this.model
             .findOne({ _id: id });
     }

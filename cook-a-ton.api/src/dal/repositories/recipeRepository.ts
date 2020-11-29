@@ -8,14 +8,14 @@ class RecipeRepository extends AbstractRepository<RecipeEntity> {
         super(schema);
     }
 
-    async find(query: string) {
+    protected async find(query: string): Promise<RecipeEntity[]> {
         return await this.model
             .find(query)
             .populate('tags')
             .populate('courses');
     }
 
-    async findById(id: Types.ObjectId) {
+    protected async findById(id: Types.ObjectId): Promise<RecipeEntity> {
         return await this.model
             .findById(id)
             .populate('tags')
