@@ -10,8 +10,8 @@ class UserSchema extends BaseSchema<UserEntity> {
     protected createSchema(): Schema {
         const schema = new Schema({
             name: { type: String, required: true, },
-            login: { type: String, required: true, },
-            passwordHash: { type: String }
+            email: { type: String, required: true, unique: true },
+            passwordHash: { type: String, required: true }
         }, { timestamps: true });
 
         return schema;

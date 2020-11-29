@@ -10,7 +10,7 @@ class UserMapper {
         return {
             id: userEntity._id,
             name: userEntity.name,
-            login: userEntity.login,
+            email: userEntity.email,
         };
     }
 
@@ -19,7 +19,7 @@ class UserMapper {
         return {
             _id: userModel.id,
             name: userModel.name,
-            login: userModel.login,
+            email: userModel.email,
         }
     }
 }

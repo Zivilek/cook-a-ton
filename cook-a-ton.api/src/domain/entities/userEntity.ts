@@ -2,7 +2,7 @@ import { BaseEntity } from "./baseEntity";
 
 type UserEntity = BaseEntity & {
     name: string;
-    login: string;
+    email: string;
     passwordHash?: string;
 }
 
